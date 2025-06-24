@@ -1,0 +1,576 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+}
+
+/* .sidebar {
+    width: 250px;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+} */
+
+
+
+.sidebar {
+    width: 220px;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 0 0 20px 0;
+    transition: width 0.3s;
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 24px 24px 16px 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar nav ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    cursor: pointer;
+    color: #222;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+.sidebar nav ul li:hover {
+    background: #f0f4f8;
+}
+
+
+/* Simple icon replacements using emoji */
+.icon-user::before { content: "\1F464"; }
+.icon-home::before { content: "\1F3E0"; }
+.icon-bell::before { content: "\1F514"; }
+.icon-save::before { content: "\1F4BE"; }
+.icon-plus::before { content: "\2795"; }
+.icon-calendar::before { content: "\1F4C5"; }
+.icon-list::before { content: "\1F4CB"; }
+.icon-settings::before { content: "\2699"; }
+.icon-events::before { content: "\1F5C3"; }
+.icon-edit::before { content: "\270F"; }
+
+.user-info {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user-info i {
+    font-size: 40px;
+}
+
+.user-info span {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center; /* Centers the pagination */
+    align-items: center;
+    gap: 5px; /* Adds space between buttons */
+    margin-top: 30px;
+  }
+  
+  .pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+  }
+  
+
+/* Styles for the Event Participation page */
+
+
+.profile-main {
+    flex: 1;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    width: calc(100% - 250px);
+    padding: 50px;
+}
+.breadcrumb {
+    font-size: 16px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+    margin-left: 16px;
+    color: #555;
+}
+.viewreg-card {
+    background: #fff;
+    border: 1.5px solid #D9D9D9;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+    margin-left: 16px;
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+}
+
+.viewreg-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.back-link {
+    color: #222;
+    text-decoration: none;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.header-content {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    margin-left: 16px;
+}
+
+.header-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.event-title-separator {
+    color: #777;
+    margin: 0 4px;
+}
+
+.participant-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.participant-count span:first-child {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.count {
+    color: #666;
+    font-size: 16px;
+}
+
+.participant-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.participant-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.participant-table th {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+    color: #555;
+    font-size: 14px;
+}
+
+.participant-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #777;
+}
+
+.btn-view {
+    background: #6EC1FF;
+    color: #fff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-delete {
+    background: transparent;
+    color: #ff6e6e;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.actions-cell {
+    display: flex;
+    align-items: center;
+}
+
+/* Modal/Popup styles for participant view */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.participant-modal {
+    background: #E8F4FD;
+    border-radius: 16px;
+    padding: 32px;
+    width: 700px;
+    max-width: 90vw;
+    display: flex;
+    gap: 24px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.participant-info-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.participant-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.participant-avatar-large {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.participant-details h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.participant-details .email {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.participant-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.info-value {
+    font-size: 16px;
+    color: #222;
+}
+
+.event-card-preview {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #6EC1FF;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-image-preview {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.event-description {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.event-details h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+.event-date, .event-location {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.event-members-preview {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.member-avatar-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-left: -4px;
+}
+
+.members-text {
+    font-size: 12px;
+    color: #6EC1FF;
+    margin-left: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.close-modal:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Remove Confirmation Modal */
+.remove-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove-modal {
+    background: #d2f6f9;
+    border-radius: 16px;
+    padding: 24px 16px 20px 16px;
+    min-width: 240px;
+    max-width: 90vw;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #222;
+}
+
+.remove-modal h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.remove-modal .remove-actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 8px;
+    justify-content: center;
+    width: 100%;
+}
+
+.remove-modal .btn-cancel {
+    background: none;
+    border: none;
+    color: #222;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.remove-modal .btn-cancel:hover {
+    background: #e0e0e0;
+}
+
+.remove-modal .btn-remove {
+    background: #6EC1FF;
+    color: #222;
+    border: none;
+    font-size: 1rem;
+    padding: 6px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.remove-modal .btn-remove:hover {
+    background: #4db8f7;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .viewreg-card {
+        padding: 16px;
+        margin-top: 16px;
+        width: 100%;
+        border-radius: 8px;
+    }
+    
+    .participant-table th,
+    .participant-table td {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .user-email {
+        display: none;
+    }
+    
+    .participant-table th,
+    .participant-table td {
+        padding: 6px 2px;
+        font-size: 12px;
+    }
+    
+    .user-avatar {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Responsive modal */
+@media (max-width: 800px) {
+    .participant-modal {
+        flex-direction: column;
+        width: 95vw;
+        padding: 24px;
+    }
+    
+    .event-card-preview {
+        order: -1;
+    }
+}
+
+@media (max-width: 500px) {
+    .remove-modal {
+        min-width: 0;
+        padding: 12px 3vw 12px 3vw;
+    }
+    .remove-modal h2 {
+        font-size: 1rem;
+    }
+    .remove-modal .remove-actions {
+        gap: 8px;
+    }
+}
